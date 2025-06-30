@@ -1,11 +1,12 @@
 services:
   - type: web
-    name: binance-webhook
+    name: binance-webhook-bot
     env: python
-    buildCommand: ""
+    plan: free
     startCommand: python app.py
+    buildCommand: ""
     envVars:
       - key: BINANCE_KEY
-        fromEnvVar: BINANCE_KEY
+        sync: false
       - key: BINANCE_SECRET
-        fromEnvVar: BINANCE_SECRET
+        sync: false
